@@ -1,0 +1,59 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "netAmount": "#1000",
+      "calculatedTax": "#130",
+      "taxVariance": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "recordedTax": "131"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "ratePct": "0",
+      "recordedTax": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "netAmount": "#1130"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "evidencePresent": "NO"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "recordedTax": "1131"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "grossAmount": "0.01",
+      "recordedTax": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "calculatedTax": "#0"
+    },
+    "error": false
+  }
+]
